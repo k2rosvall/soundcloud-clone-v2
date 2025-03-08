@@ -1,0 +1,101 @@
+inherit_from: .rubocop_todo.yml
+
+
+AllCops:
+  NewCops: enable
+  SuggestExtensions: false
+  TargetRubyVersion: 3.2.2
+  Exclude:
+    - 'bin/**/*'
+    - 'db/**/*.rb'
+    - 'node_modules/**/*'
+    - 'vendor/**/*'
+    - 'log/**/*'
+
+require:
+  - rubocop-rails
+  - rubocop-performance
+  - rubocop-minitest
+
+
+Layout/LineLength:
+  Max: 160
+  Exclude:
+    - app/views/**/*.rb
+    - config/application.rb
+    - lib/tasks/*.rake
+    - test/support/**/*.rb
+
+
+Lint/MissingSuper:
+ Exclude:
+    - app/views/**/*.rb
+    - app/queries/**/*.rb
+
+Metrics/AbcSize:
+  Max: 18
+
+Metrics/BlockLength:
+  Exclude:
+    - config/environments/*.rb
+    - config/initializers/devise.rb
+    - config/routes.rb
+    - config/routes/*.rb
+    - lib/tasks/*.rake
+    - lib/devise/**/*.rb
+    - app/views/**/*.rb
+    - app/views/**/*.jbuilder
+    - test/factories/*.rb
+
+
+Metrics/ClassLength:
+  Max: 110
+  Exclude:
+    - test/**/*.rb
+
+Metrics/MethodLength:
+  Max: 12
+
+Minitest/MultipleAssertions:
+  Max: 8
+
+
+Naming/MethodParameterName:
+  Exclude:
+    - app/views/**/*.rb
+    - test/components/**/*.rb
+
+Performance/MethodObjectAsBlock:
+  Exclude:
+    - app/queries/**/*.rb
+
+Rails/Output:
+  Exclude:
+    - app/views/**/*.rb
+
+Style/ClassAndModuleChildren:
+  Exclude:
+    - test/**/*.rb
+
+Style/Documentation:
+  Enabled: false
+
+Style/DoubleNegation:
+  Enabled: false
+
+Style/HashSyntax:
+  Enabled: true
+  EnforcedShorthandSyntax: never
+
+
+Style/RedundantConstantBase:
+  Exclude:
+    - config/environments/*.rb
+
+Style/StringLiterals:
+  Enabled: true
+  EnforcedStyle: double_quotes
+
+Style/StringLiteralsInInterpolation:
+  Enabled: true
+  EnforcedStyle: double_quotes
