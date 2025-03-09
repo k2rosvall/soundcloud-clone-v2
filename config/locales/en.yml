@@ -28,4 +28,10 @@
 #       enabled: "ON"
 
 en:
-  hello: "Hello world"
+  controllers:
+    create:
+      success: "%{model} was successfully created."
+    update:
+      sucess: "%{model} was successfully updated."
+    delete:
+      sucess: "%{model} was successfully deleted."
