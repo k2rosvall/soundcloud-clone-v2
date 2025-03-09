@@ -12,5 +12,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root to: "home#index"
 
-  resource :profile, except: :new
+  resources :profiles, except: %i[ new create ] do
+    resources :tracks
+  end
 end
