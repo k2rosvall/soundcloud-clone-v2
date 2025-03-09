@@ -1,15 +1,18 @@
 ENV["RAILS_ENV"] ||= "test"
 require_relative "../config/environment"
 require "rails/test_help"
+require "faker"
+require "factory_bot"
 
 module ActiveSupport
   class TestCase
-    # Run tests in parallel with specified workers
+    include Devise::Test::IntegrationHelpers
+    include FactoryBot::Syntax::Methods
+
     parallelize(workers: :number_of_processors)
 
-    # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
-    fixtures :all
+    Faker::Config.random = Random.new
 
-    # Add more helper methods to be used by all tests here...
+    FactoryBot.find_definitions
   end
 end
