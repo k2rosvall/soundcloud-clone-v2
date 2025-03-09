@@ -62,3 +62,7 @@ group :test do
 end
 
 gem "devise", "~> 4.9"
+
+gem "factory_bot", "~> 6.5"
+
+gem "faker", "~> 3.5"
