@@ -1,4 +1,4 @@
-class Profile < ApplicationRecord
+class Track < ApplicationRecord
   belongs_to :profile
 
   validates :name, presence: true
