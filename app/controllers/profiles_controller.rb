@@ -1,7 +1,7 @@
 class ProfilesController < ApplicationController
   before_action :set_profile
 
-  def index 
+  def index
     @profiles = Profile.all
   end
 
