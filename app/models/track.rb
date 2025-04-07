@@ -4,5 +4,5 @@ class Track < ApplicationRecord
   has_one_attached :file
   has_one_attached :artwork
 
-  validates :name, presence: true
+  validates :name, :file, presence: true
 end
