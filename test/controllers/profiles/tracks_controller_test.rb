@@ -25,7 +25,7 @@ module Profiles
     test "should create track" do
       assert_difference("Track.count", 1) do
         post profile_tracks_path(@profile), params: {
-          track: { name: "New Track", description: "New description" }
+          track: { name: "New Track", description: "New description", file: fixture_file_upload("sample-track.mp3", "audio/mpeg") }
         }
       end
       assert_redirected_to profile_track_path(@profile, Track.last)
