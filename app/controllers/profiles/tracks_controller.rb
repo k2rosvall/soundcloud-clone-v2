@@ -44,7 +44,7 @@ module Profiles
     end
 
     def track_params
-      params.require(:track).permit(:name, :description)
+      params.require(:track).permit(:name, :description, :file, :artwork)
     end
   end
 end
