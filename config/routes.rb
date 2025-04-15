@@ -15,4 +15,6 @@ Rails.application.routes.draw do
   resources :profiles do
     resources :tracks, controller: "profiles/tracks"
   end
+
+  resources :likes
 end
