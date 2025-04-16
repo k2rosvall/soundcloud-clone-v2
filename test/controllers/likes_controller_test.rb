@@ -23,5 +23,5 @@ class LikesControllerTest < ActionDispatch::IntegrationTest
     end
 
     assert_redirected_to profile_path(@user.profile)
- 1 end
+  end
 end
