@@ -12,4 +12,16 @@ class Profile < ApplicationRecord
   has_many :followers, through: :follower_profiles, source: :follower
 
   validates :username, presence: true
+
+  def follow(followed_profile)
+    followed_profiles.create(followed: followed_profile)
+  end
+
+  def unfollow(followed_profile)
+    followed_profiles.find_by(followed: followed_profile).destroy
+  end
+
+  def following?(profile)
+    following.include?(profile)
+  end
 end
